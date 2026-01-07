@@ -1,0 +1,16 @@
+{
+  "name": "hospital-management-deployment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "heroku-postbuild": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}

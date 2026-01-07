@@ -143,7 +143,7 @@ export default function AdminDashboard() {
         // Handle not authenticated case
         return;
       }
-      const response = await fetch("http://localhost:5000/api/admin/profile", {
+      const response = await fetch("/api/admin/profile", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -168,7 +168,7 @@ export default function AdminDashboard() {
         return;
       }
       const response = await fetch(
-        "http://localhost:5000/api/admin/total-doctors",
+        "/api/admin/total-doctors",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -193,7 +193,7 @@ export default function AdminDashboard() {
         return;
       }
       const response = await fetch(
-        "http://localhost:5000/api/admin/total-patients",
+        "/api/admin/total-patients",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -218,7 +218,7 @@ export default function AdminDashboard() {
         return;
       }
       const response = await fetch(
-        "http://localhost:5000/api/admin/doctor-overview",
+        "/api/admin/doctor-overview",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -243,7 +243,7 @@ export default function AdminDashboard() {
         return;
       }
       const response = await fetch(
-        "http://localhost:5000/api/admin/patient-overview",
+        "/api/admin/patient-overview",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -448,7 +448,7 @@ export default function AdminDashboard() {
           return;
         }
         const response = await fetch(
-          "http://localhost:5000/api/admin/profile",
+          "/api/admin/profile",
           {
             method: "PUT",
             headers: {
@@ -552,7 +552,7 @@ export default function AdminDashboard() {
           return;
         }
         const response = await fetch(
-          "http://localhost:5000/api/admin/add-doctor",
+          "/api/admin/add-doctor",
           {
             method: "POST",
             headers: {
@@ -720,7 +720,7 @@ export default function AdminDashboard() {
           return;
         }
         const response = await fetch(
-          "http://localhost:5000/api/admin/add-admin",
+          "/api/admin/add-admin",
           {
             method: "POST",
             headers: {

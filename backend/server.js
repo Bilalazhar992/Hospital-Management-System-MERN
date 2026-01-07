@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors'); // Add this line
+const path = require('path');
 
 dotenv.config();
 
@@ -32,6 +33,23 @@ app.get('/', (req, res) => {
   res.send('Welcome to the Hospital Management System API');
 });
 
+// --------------------------DEPLOYMENT------------------------------
+const __dirname1 = path.resolve();
+
+if (process.env.NODE_ENV === "production") {
+  // 1. Tell Express where the frontend build folder is
+  app.use(express.static(path.join(__dirname1, "/frontend/build")));
+
+  // 2. For any other route, send the React index.html
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname1, "frontend", "build", "index.html"));
+  });
+} else {
+  app.get("/", (req, res) => {
+    res.send("API is running Successfully");
+  });
+}
+// --------------------------DEPLOYMENT------------------------------
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

@@ -126,7 +126,7 @@ export default function PatientDashboard() {
       }
 
       const response = await fetch(
-        "http://localhost:5000/api/patient/profile",
+        "/api/patient/profile",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -153,7 +153,7 @@ export default function PatientDashboard() {
         navigate("/login");
         return;
       }
-      const response = await fetch("http://localhost:5000/api/doctor/all", {
+      const response = await fetch("/api/doctor/all", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -174,7 +174,7 @@ export default function PatientDashboard() {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        `http://localhost:5000/api/patient/available-slots?doctorId=${doctorId}&date=${date}`,
+        `/api/patient/available-slots?doctorId=${doctorId}&date=${date}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -200,7 +200,7 @@ export default function PatientDashboard() {
         return;
       }
       const response = await fetch(
-        "http://localhost:5000/api/patient/appointments",
+        "/api/patient/appointments",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -227,7 +227,7 @@ export default function PatientDashboard() {
         return;
       }
       const response = await fetch(
-        "http://localhost:5000/api/patient/care-team",
+        "/api/patient/care-team",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -253,7 +253,7 @@ export default function PatientDashboard() {
         return;
       }
       const response = await fetch(
-        "http://localhost:5000/api/patient/prescriptions",
+        "/api/patient/prescriptions",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -443,7 +443,7 @@ export default function PatientDashboard() {
       try {
         const token = localStorage.getItem("token");
         const response = await fetch(
-          "http://localhost:5000/api/patient/profile",
+          "/api/patient/profile",
           {
             method: "PUT",
             headers: {
@@ -556,7 +556,7 @@ export default function PatientDashboard() {
       try {
         const token = localStorage.getItem("token");
         const response = await fetch(
-          "http://localhost:5000/api/patient/book-appointment",
+          "/api/patient/book-appointment",
           {
             method: "POST",
             headers: {
